@@ -15,6 +15,7 @@ import UIKit
         case bottom
     }
     
+    public var shouldCheckText = true
     public var highlightedText: String?
     public var highlightedForegroundColor: UIColor?
     public var highlightedBackgroundColor: UIColor?
@@ -195,12 +196,15 @@ import UIKit
             _accessibilityElements = nil
             linkModels = []
 
-            checkText()
-            if let highlightedText = highlightedText,
-               let highlightedForegroundColor = highlightedForegroundColor,
-               let highlightedBackgroundColor = highlightedBackgroundColor {
-                highlightAllOccurrence(text: highlightedText, highlightColor: highlightedBackgroundColor, textColor: highlightedForegroundColor)
+            if shouldCheckText {
+                checkText()
             }
+            
+//            if let highlightedText = highlightedText,
+//               let highlightedForegroundColor = highlightedForegroundColor,
+//               let highlightedBackgroundColor = highlightedBackgroundColor {
+//                highlightAllOccurrence(text: highlightedText, highlightColor: highlightedBackgroundColor, textColor: highlightedForegroundColor)
+//            }
                 
             setNeedsDisplay()
             invalidateIntrinsicContentSize()
