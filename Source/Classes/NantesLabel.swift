@@ -15,9 +15,9 @@ import UIKit
         case bottom
     }
     
-    var highlightedText: String?
-    var highlightedForegroundColor: UIColor?
-    var highlightedBackgroundColor: UIColor?
+    public var highlightedText: String?
+    public var highlightedForegroundColor: UIColor?
+    public var highlightedBackgroundColor: UIColor?
 
     /// NSAttributedString attributes used to style active links
     /// nil or [:] will add no styling
