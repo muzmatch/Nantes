@@ -196,8 +196,12 @@ import UIKit
             linkModels = []
 
             checkText()
-            highlightAllOccurrence(text: highlightedText, highlightColor: highlightedBackgroundColor, textColor: highlightedForegroundColor)
-
+            if let highlightedText = highlightedText,
+               let highlightedForegroundColor = highlightedForegroundColor,
+               let highlightedBackgroundColor = highlightedBackgroundColor {
+                highlightAllOccurrence(text: highlightedText, highlightColor: highlightedBackgroundColor, textColor: highlightedForegroundColor)
+            }
+                
             setNeedsDisplay()
             invalidateIntrinsicContentSize()
 
