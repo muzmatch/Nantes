@@ -14,6 +14,10 @@ import UIKit
         case center
         case bottom
     }
+    
+    var highlightedText: String?
+    var highlightedForegroundColor: UIColor?
+    var highlightedBackgroundColor: UIColor?
 
     /// NSAttributedString attributes used to style active links
     /// nil or [:] will add no styling
@@ -192,6 +196,7 @@ import UIKit
             linkModels = []
 
             checkText()
+            highlightAllOccurrence(text: highlightedText, highlightColor: highlightedBackgroundColor, textColor: highlightedForegroundColor)
 
             setNeedsDisplay()
             invalidateIntrinsicContentSize()
