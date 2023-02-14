@@ -64,7 +64,15 @@ extension NantesLabel {
             }
 
             let link = NantesLabel.Link(attributes: attributes, activeAttributes: activeLinkAttributes, inactiveAttributes: inactiveLinkAttributes, linkTappedBlock: nil, result: result, text: text)
-            links.append(link)
+
+            if link.result?.url?.absoluteString.hasPrefix("mailto:") == true {
+                if enableEmailLinks {
+                    links.append(link)
+                }
+            } else {
+                links.append(link)
+
+            }
         }
 
         addLinks(links)
